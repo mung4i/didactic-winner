@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 import RxSwift
 import RxCocoa
 
@@ -19,5 +21,10 @@ final class APIClient {
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return requestObservable.callAPI(request: request)
+    }
+    
+    func fetchImage(url: URL) throws -> Observable<ImageResponse> {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        return requestObservable.fetchImage(url: url, store: delegate.imageStore)
     }
 }

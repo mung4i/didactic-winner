@@ -12,9 +12,13 @@
 		5B030D77268C6E2B00C42B9E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 5B030D76268C6E2B00C42B9E /* RxRelay */; };
 		5B030D79268C6E2B00C42B9E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5B030D78268C6E2B00C42B9E /* RxCocoa */; };
 		5B030D7B268C6E2B00C42B9E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 5B030D7A268C6E2B00C42B9E /* RxBlocking */; };
+		5B539888268CC0E600011963 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B539887268CC0E600011963 /* CustomTableViewCell.xib */; };
+		5B539891268CC58700011963 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B539890268CC58700011963 /* CustomTableViewCell.swift */; };
+		5B661A24268CAEF8009A4ABD /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661A23268CAEF8009A4ABD /* ImageResponse.swift */; };
 		5BC76CBB268C793B00DEC930 /* ImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76CBA268C793B00DEC930 /* ImagesResponse.swift */; };
 		5BC76CC3268C79E200DEC930 /* RequestObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76CC2268C79E200DEC930 /* RequestObservable.swift */; };
 		5BC76CC8268C7CAC00DEC930 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76CC7268C7CAC00DEC930 /* APIClient.swift */; };
+		5BC76CD3268C9FF700DEC930 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76CD2268C9FF700DEC930 /* ImageCache.swift */; };
 		5BF21FC5268C456A0095B3C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF21FC4268C456A0095B3C1 /* AppDelegate.swift */; };
 		5BF21FC9268C456A0095B3C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF21FC8268C456A0095B3C1 /* HomeViewController.swift */; };
 		5BF21FCC268C456A0095B3C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF21FCA268C456A0095B3C1 /* Main.storyboard */; };
@@ -42,9 +46,13 @@
 
 /* Begin PBXFileReference section */
 		5B030D63268C63F500C42B9E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		5B539887268CC0E600011963 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		5B539890268CC58700011963 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		5B661A23268CAEF8009A4ABD /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
 		5BC76CBA268C793B00DEC930 /* ImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesResponse.swift; sourceTree = "<group>"; };
 		5BC76CC2268C79E200DEC930 /* RequestObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestObservable.swift; sourceTree = "<group>"; };
 		5BC76CC7268C7CAC00DEC930 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		5BC76CD2268C9FF700DEC930 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		5BF21FC1268C456A0095B3C1 /* didactic-winner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "didactic-winner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF21FC4268C456A0095B3C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BF21FC8268C456A0095B3C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +102,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B53988F268CC57000011963 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B539890268CC58700011963 /* CustomTableViewCell.swift */,
+				5B539887268CC0E600011963 /* CustomTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5B661A31268CB174009A4ABD /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				5BC76CD2268C9FF700DEC930 /* ImageCache.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		5BA58E87268C490C003DEC9B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +151,7 @@
 		5BC76CB9268C792500DEC930 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B661A23268CAEF8009A4ABD /* ImageResponse.swift */,
 				5BC76CBA268C793B00DEC930 /* ImagesResponse.swift */,
 			);
 			path = Model;
@@ -157,6 +183,8 @@
 				5BA58E88268C4915003DEC9B /* Controllers */,
 				5BA58EA9268C601B003DEC9B /* Network */,
 				5BA58E87268C490C003DEC9B /* Resources */,
+				5B661A31268CB174009A4ABD /* Store */,
+				5B53988F268CC57000011963 /* Views */,
 				5BF21FC4268C456A0095B3C1 /* AppDelegate.swift */,
 				5B030D63268C63F500C42B9E /* BaseViewModel.swift */,
 			);
@@ -286,6 +314,7 @@
 			files = (
 				5BF21FD1268C456B0095B3C1 /* LaunchScreen.storyboard in Resources */,
 				5BF21FCE268C456B0095B3C1 /* Assets.xcassets in Resources */,
+				5B539888268CC0E600011963 /* CustomTableViewCell.xib in Resources */,
 				5BF21FCC268C456A0095B3C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,10 +340,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B539891268CC58700011963 /* CustomTableViewCell.swift in Sources */,
+				5B661A24268CAEF8009A4ABD /* ImageResponse.swift in Sources */,
 				5BC76CBB268C793B00DEC930 /* ImagesResponse.swift in Sources */,
 				5BF21FC9268C456A0095B3C1 /* HomeViewController.swift in Sources */,
 				5BF21FC5268C456A0095B3C1 /* AppDelegate.swift in Sources */,
 				5B030D64268C63F500C42B9E /* BaseViewModel.swift in Sources */,
+				5BC76CD3268C9FF700DEC930 /* ImageCache.swift in Sources */,
 				5BC76CC3268C79E200DEC930 /* RequestObservable.swift in Sources */,
 				5BC76CC8268C7CAC00DEC930 /* APIClient.swift in Sources */,
 			);
