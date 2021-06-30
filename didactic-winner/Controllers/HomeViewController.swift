@@ -8,10 +8,22 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    // MARK: - IB Outlets
+    @IBOutlet weak var tableView: UITableView!
 
+    // MARK: - Overidden Instance Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        configureTableView()
+        title = "The Milky Way"
+        
+    }
+    
+    // MARK: - Private Instance Methods
+    private func configureTableView() {
+        tableView.separatorStyle = .none
     }
 }
 
