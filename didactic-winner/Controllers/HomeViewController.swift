@@ -12,7 +12,6 @@ import RxCocoa
 
 class HomeViewController: UIViewController {
     
-    private let cellID = "UITableViewCell"
     private let disposeBag = DisposeBag()
     private var viewModel: BaseViewModel = .init()
     
@@ -29,25 +28,24 @@ class HomeViewController: UIViewController {
     
     // MARK: - Private Instance Methods
     private func bindTableView(source: Observable<[Item]>) {
-        source.bind(
-            to: self.tableView.rx.items(
-                cellIdentifier: cellID,
-                cellType: UITableViewCell.self
+        source.bind(to: self.tableView.rx.items(
+                cellIdentifier: CustomTableViewCell.className,
+                cellType: CustomTableViewCell.self
             )
         ) { (row, item, cell) in
-            
-            guard let data = item.data.first else {
-                fatalError()
-            }
-            
-            cell.imageView?.image = UIImage()
-            cell.textLabel?.text = data.title
-            cell.detailTextLabel?.text = data.description508
+            cell.populateData(item: item)
         }.disposed(by: disposeBag)
     }
     
     private func configureTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(
+            UINib(nibName: CustomTableViewCell.className, bundle: nil),
+            forCellReuseIdentifier: CustomTableViewCell.className
+        )
+        tableView
+            .rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
         tableView.separatorStyle = .none
     }
     
@@ -57,5 +55,11 @@ class HomeViewController: UIViewController {
         
         bindTableView(source: output.collection)
         disposeBag.insert(output.title.drive(self.rx.title))
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
