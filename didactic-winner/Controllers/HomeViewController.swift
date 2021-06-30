@@ -12,7 +12,6 @@ import RxCocoa
 
 class HomeViewController: UIViewController {
     
-    private let cellID = "CustomTableViewCell"
     private let disposeBag = DisposeBag()
     private var viewModel: BaseViewModel = .init()
     
@@ -30,7 +29,7 @@ class HomeViewController: UIViewController {
     // MARK: - Private Instance Methods
     private func bindTableView(source: Observable<[Item]>) {
         source.bind(to: self.tableView.rx.items(
-                cellIdentifier: cellID,
+                cellIdentifier: CustomTableViewCell.className,
                 cellType: CustomTableViewCell.self
             )
         ) { (row, item, cell) in
@@ -39,7 +38,10 @@ class HomeViewController: UIViewController {
     }
     
     private func configureTableView() {
-        tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
+        tableView.register(
+            UINib(nibName: CustomTableViewCell.className, bundle: nil),
+            forCellReuseIdentifier: CustomTableViewCell.className
+        )
         tableView
             .rx
             .setDelegate(self)
