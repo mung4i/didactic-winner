@@ -18,30 +18,39 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var cellDetailLabel: UILabel!
     @IBOutlet weak var cellTitleLabel: UILabel!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cellImageView.image = nil
+        
+    }
+    
+    // MARK: - IB Outlets
     func populateData(item: Item) {
-        guard let data = item.data.first else { return }
+        cellDetailLabel.text = item.detail
+        cellTitleLabel.text = item.title
         
-        let detail = data.photographer == nil ? "" : "\(data.photographer ?? "") | \(formattedDate(created: data.dateCreated))"
-
-        cellDetailLabel.text = detail
-        cellTitleLabel.text = data.title
-        
-        guard let link = item.links.first?.href else { return }
+        guard let link = item.link else { return }
         setImage(urlString: link)
     }
     
-    private func formattedDate(created: String) -> String{
-        return Date.formatDate(str: created)
+    // MARK: - Private Instance Methods
+    private func bindImageView(url: URL) {
+         APIClient.shared.fetchImage(url: url).subscribe { (event) in
+            guard let image = event.element?.image else { return }
+            DispatchQueue.main.async {
+                APIClient.shared.store.saveImage(image: image, url: url)
+                self.cellImageView.image = image.resizeImg()
+                self.setNeedsLayout()
+            }
+        }.disposed(by: disposeBag)
     }
     
     private func setImage(urlString: String) {
         guard let url = URL(string: urlString) else { return }
-        try? APIClient.shared.fetchImage(url: url).subscribe { (event) in
-            guard let imageResponse = event.element else { return }
-            DispatchQueue.main.async {
-                self.cellImageView.image = imageResponse.image?.resizeImg()
-                self.setNeedsLayout()
-            }
-        }.disposed(by: disposeBag)
+        if let image = APIClient.shared.store.image(url: url) {
+            cellImageView.image = image.resizeImg()
+        } else {
+            self.bindImageView(url: url)
+        }
     }
 }

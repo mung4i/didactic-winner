@@ -18,6 +18,7 @@
 		5B5398A2268CD3D500011963 /* Foundation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5398A1268CD3D500011963 /* Foundation+.swift */; };
 		5B5398AA268CD3E800011963 /* UIKit+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5398A9268CD3E800011963 /* UIKit+.swift */; };
 		5B661A24268CAEF8009A4ABD /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B661A23268CAEF8009A4ABD /* ImageResponse.swift */; };
+		5B91F046268D16D00027F883 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91F045268D16D00027F883 /* DetailViewController.swift */; };
 		5BC76CBB268C793B00DEC930 /* ImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76CBA268C793B00DEC930 /* ImagesResponse.swift */; };
 		5BC76CC3268C79E200DEC930 /* RequestObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76CC2268C79E200DEC930 /* RequestObservable.swift */; };
 		5BC76CC8268C7CAC00DEC930 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76CC7268C7CAC00DEC930 /* APIClient.swift */; };
@@ -55,6 +56,7 @@
 		5B5398A1268CD3D500011963 /* Foundation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+.swift"; sourceTree = "<group>"; };
 		5B5398A9268CD3E800011963 /* UIKit+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+.swift"; sourceTree = "<group>"; };
 		5B661A23268CAEF8009A4ABD /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
+		5B91F045268D16D00027F883 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5BC76CBA268C793B00DEC930 /* ImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesResponse.swift; sourceTree = "<group>"; };
 		5BC76CC2268C79E200DEC930 /* RequestObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestObservable.swift; sourceTree = "<group>"; };
 		5BC76CC7268C7CAC00DEC930 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		5BA58E88268C4915003DEC9B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5B91F045268D16D00027F883 /* DetailViewController.swift */,
 				5BF21FC8268C456A0095B3C1 /* HomeViewController.swift */,
 			);
 			path = Controllers;
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B91F046268D16D00027F883 /* DetailViewController.swift in Sources */,
 				5B539891268CC58700011963 /* CustomTableViewCell.swift in Sources */,
 				5B53989C268CD35900011963 /* ValidationError.swift in Sources */,
 				5B661A24268CAEF8009A4ABD /* ImageResponse.swift in Sources */,
