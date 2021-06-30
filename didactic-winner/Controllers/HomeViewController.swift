@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    private var viewModel: BaseViewModel = .init()
+    
     // MARK: - IB Outlets
     @IBOutlet weak var tableView: UITableView!
 
@@ -18,7 +20,6 @@ class HomeViewController: UIViewController {
         
         configureTableView()
         title = "The Milky Way"
-        
     }
     
     // MARK: - Private Instance Methods
@@ -27,7 +28,7 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - Instance Methods
-    func bind(viewModel: BaseViewModel) {
+    func bind() {
         
     }
 }
