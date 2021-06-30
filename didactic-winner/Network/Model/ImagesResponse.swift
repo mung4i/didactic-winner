@@ -37,7 +37,7 @@ struct Datum: Codable {
     let keywords: [String]?
     let mediaType: MediaType
     let nasaID: String
-    let dateCreated: Date
+    let dateCreated: String
     let datumDescription: String
     let center: Center
     let title: String

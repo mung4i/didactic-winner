@@ -12,9 +12,22 @@ import RxCocoa
 
 class BaseViewModel {
     let disposeBag = DisposeBag()
-    let error: BehaviorRelay<String> = .init(value: "")
-    let isLoading: BehaviorRelay<Bool> = .init(value: false)
-    let collection: BehaviorRelay<[Item]> = .init(value: [])
+    
+    private let error: BehaviorRelay<String> = .init(value: "")
+    private let isLoading: BehaviorRelay<Bool> = .init(value: false)
+    private let collection: BehaviorRelay<[Item]> = .init(value: [])
+    
+    func bind() -> (
+        collection: Observable<[Item]>,
+        error: Observable<String>,
+        isLoading: Observable<Bool>
+    ) {
+        return (
+            collection: self.collection.asObservable(),
+            error: self.error.asObservable(),
+            isLoading: self.isLoading.asObservable()
+        )
+    }
     
     func fetchImages() {
         isLoading.accept(true)
@@ -37,5 +50,9 @@ class BaseViewModel {
             self.error.accept(error.localizedDescription)
             self.isLoading.accept(false)
         }
+    }
+    
+    init() {
+        self.fetchImages()
     }
 }

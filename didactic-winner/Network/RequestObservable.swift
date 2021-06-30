@@ -18,7 +18,7 @@ final class RequestObservable {
         self.urlSession = .init(configuration: .default)
     }
     
-    public func callAPI<Model: Decodable>(request: URLRequest) -> Observable<Model> {
+    public func callAPI<Model: Codable>(request: URLRequest) -> Observable<Model> {
         return Observable.create { (observer) in
             
             let task = self.urlSession.dataTask(with: request) { (data, response, error) in
@@ -32,14 +32,15 @@ final class RequestObservable {
                         } else {
                             observer.onError(error!)
                         }
-                    } catch {
+                    }
+                    catch {
                         observer.onError(error)
                     }
                 }
                 observer.onCompleted()
             }
-            
             task.resume()
+            
             return Disposables.create {
                 task.cancel()
             }
