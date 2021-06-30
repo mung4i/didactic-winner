@@ -25,5 +25,9 @@ class HomeViewController: UIViewController {
     private func configureTableView() {
         tableView.separatorStyle = .none
     }
+    
+    // MARK: - Instance Methods
+    func bind(viewModel: BaseViewModel) {
+        
+    }
 }
-
