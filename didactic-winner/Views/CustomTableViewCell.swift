@@ -45,37 +45,3 @@ class CustomTableViewCell: UITableViewCell {
         }.disposed(by: disposeBag)
     }
 }
-
-extension Date {
-    static var dateFormatter: DateFormatter {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.locale = Locale.current
-        return dateFormatter
-    }
-    
-    static func formatDate(str: String, format: String = "d MMM YYYY") -> String {
-        if let date = Date.dateFormatter.date(from: str) {
-            let newDf = DateFormatter()
-            newDf.dateFormat = format
-            return newDf.string(from: date)
-        }
-        return ""
-    }
-}
-
-
-extension UIImage {
-    func resizeImg(
-        toSize size: CGSize = CGSize(width: 64, height: 64),
-        scale: CGFloat = UIScreen.main.scale
-    ) -> UIImage? {
-        let imgRect = CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: size)
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        draw(in: imgRect)
-        let resizedImg = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return resizedImg
-    }
-}

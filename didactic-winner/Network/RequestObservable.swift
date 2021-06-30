@@ -11,25 +11,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-extension CustomError: LocalizedError {
-    var errorDescription: String? {
-        switch self {
-        case .missingImage:
-            return NSLocalizedString("Missing Image", comment: "")
-        case .missingImageData:
-            return NSLocalizedString("Missing Image Data", comment: "")
-        case .missingResponse:
-            return NSLocalizedString("Missing Response", comment: "")
-        }
-    }
-}
-
-enum CustomError: Error {
-    case missingImage
-    case missingImageData
-    case missingResponse
-}
-
 final class RequestObservable {
     
     // MARK: - Private Instance Properties
@@ -47,7 +28,7 @@ final class RequestObservable {
             
             let task = self.urlSession.dataTask(with: request) { (data, response, error) in
                 guard let httpResponse = response as? HTTPURLResponse else {
-                    observer.onError(CustomError.missingResponse)
+                    observer.onError(ValidationError.missingResponse)
                     return
                 }
                 do {
@@ -59,9 +40,7 @@ final class RequestObservable {
                         observer.onError(error!)
                     }
                 }
-                catch {
-                    observer.onError(error)
-                }
+                catch { observer.onError(error) }
                 observer.onCompleted()
             }
             task.resume()
@@ -98,22 +77,21 @@ final class RequestObservable {
         let request = URLRequest(url: url)
         let task = self.urlSession.dataTask(with: request) { (data, response, error) in
             guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(CustomError.missingResponse))
+                completion(.failure(ValidationError.missingResponse))
                 return
             }
             guard (200...399).contains(httpResponse.statusCode) else {
-                completion(.failure(CustomError.missingImage))
+                completion(.failure(ValidationError.missingImage))
                 return
             }
             guard let data = data else {
-                completion(.failure(CustomError.missingImageData))
+                completion(.failure(ValidationError.missingImageData))
                 return
             }
             completion(.success(ImageResponse(from: data)))
         }
         task.resume()
     }
-    
     
     private func getImage(request: URLRequest) -> Observable<ImageResponse> {
         return callAPI(request: request)
