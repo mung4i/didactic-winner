@@ -53,13 +53,37 @@ class DetailsViewController: UIViewController {
     func setImage(viewModel: DetailViewModel) {
         let output = viewModel.bind()
         guard let url = URL(string: output.urlString.value) else { return }
+        
+        let size: CGSize = .init(
+            width: CGSize.customWidth(imageView.bounds.width),
+            height: CGSize.customHeight(imageView.bounds.height)
+        )
+        
         if let image = APIClient.shared.store.image(url: url) {
-            let size: CGSize = .init(
-                width: CGSize.customWidth(imageView.bounds.width),
-                height: CGSize.customHeight(imageView.bounds.height)
-            )
             imageView.image = image.resizeImg(toSize: size)
+        } else {
+            bindImageView(url: url)
         }
+    }
+    
+    private func bindImageView(url: URL) {
+        APIClient.shared.isLoadingImage.asObservable().subscribe { event in
+            let isLoading = event.element ?? false
+            if isLoading {
+                self.imageView.addBlurView()
+            } else {
+                self.imageView.removeBlurView()
+            }
+        }.disposed(by: disposeBag)
+        
+         APIClient.shared.fetchImage(url: url).subscribe { (event) in
+            guard let image = event.element?.image else { return }
+            DispatchQueue.main.async {
+                APIClient.shared.store.saveImage(image: image, url: url)
+                self.imageView.image = image.resizeImg()
+                self.view.setNeedsLayout()
+            }
+        }.disposed(by: disposeBag)
     }
 }
 

@@ -16,6 +16,8 @@ final class RequestObservable {
     // MARK: - Private Instance Properties
     private lazy var decoder = JSONDecoder()
     private var urlSession: URLSession
+    var isLoadingDataModel: BehaviorRelay<Bool> = .init(value: false)
+    var isLoadingImage: BehaviorRelay<Bool> = .init(value: false)
     
     // MARK: - Public Initializer
     public init(config: URLSessionConfiguration) {
@@ -25,13 +27,17 @@ final class RequestObservable {
     // MARK: - Instance Methods
     
     public func fetchDataModel<Model: Codable>(request: URLRequest) -> Observable<Model> {
+        isLoadingDataModel.accept(true)
         return urlSession.rx.data(request: request).map { (data) in
+            self.isLoadingDataModel.accept(false)
             return try self.decoder.decode(Model.self, from: data)
         }
     }
     
     public func fetchImage(request: URLRequest) -> Observable<ImageResponse> {
+        isLoadingImage.accept(true)
         return urlSession.rx.data(request: request).map { (data) in
+            self.isLoadingImage.accept(false)
             return ImageResponse(from: data)
         }
     }
