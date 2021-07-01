@@ -63,3 +63,87 @@ extension UIImage {
         return resizedImg
     }
 }
+
+extension UIView {
+    func _addBlurView() {
+        let effectView = UIBlurEffect(style: .light)
+        
+        let blurView = UIVisualEffectView(effect: effectView)
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        
+        UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveEaseInOut, animations: {
+            self.addSubview(blurView)
+        })
+        
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.color = UIColor.black
+        activityIndicator.style = .gray
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        blurView.contentView.addSubview(activityIndicator)
+        
+        NSLayoutConstraint.activate([
+            blurView.widthAnchor.constraint(equalToConstant: 150),
+            blurView.heightAnchor.constraint(equalToConstant: 150),
+            blurView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            blurView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: blurView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: blurView.centerYAnchor),
+            activityIndicator.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.25),
+            activityIndicator.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.25)
+        ])
+        
+        blurView.layer.cornerRadius = 5
+        blurView.layer.masksToBounds = true
+        
+        activityIndicator.startAnimating()
+    }
+    
+    func _removeBlurView() {
+        subviews.forEach { (view) in
+            guard view.isKind(of: UIVisualEffectView.self) else { return }
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseInOut, animations: {
+                view.removeFromSuperview()
+            })
+        }
+    }
+    
+    func addBlurView() {
+        DispatchQueue.main.async {
+            self._addBlurView()
+        }
+    }
+    
+    func removeBlurView() {
+        DispatchQueue.main.async {
+            self._removeBlurView()
+        }
+    }
+}
+
+extension UIViewController {
+    func addBlurView() {
+        self.view.addBlurView()
+    }
+    
+    func removeBlurView() {
+        self.view.removeBlurView()
+    }
+    
+    func showControllerAlert(message: String, title: String, completion: (() -> Void)? = nil) {
+        DispatchQueue.main.async {
+            self._showControllerAlert(message: message, title: title, completion: completion)
+        }
+    }
+    
+    func _showControllerAlert(message: String, title: String, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(title: "OK", style: .default) { _ in
+                if let completion = completion { completion() }
+            }
+        )
+        self.present(alert, animated: true, completion: nil)
+    }
+}

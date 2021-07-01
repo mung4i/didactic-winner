@@ -55,6 +55,24 @@ class HomeViewController: UIViewController {
         
         bindTableView(source: output.collection)
         disposeBag.insert(output.title.drive(self.rx.title))
+        
+        output.error.asObservable().subscribe({ event in
+            let error = event.element ?? ""
+            
+            if error != "" {
+                self.showControllerAlert(message: error, title: "Warning")
+            }
+        }).disposed(by: disposeBag)
+        
+        output.isLoading.subscribe({ event in
+            let isLoading = event.element ?? false
+            
+            if isLoading {
+                self.addBlurView()
+            } else {
+                self.removeBlurView()
+            }
+        }).disposed(by: disposeBag)
     }
 }
 

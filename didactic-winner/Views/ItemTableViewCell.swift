@@ -25,6 +25,16 @@ class ItemTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        
+        APIClient.shared.isLoadingImage.asObservable().subscribe { event in
+            let isLoading = event.element ?? false
+            
+            if isLoading {
+                self.cellImageView.addBlurView()
+            } else {
+                self.cellImageView.removeBlurView()
+            }
+        }.disposed(by: disposeBag)
     }
     
     override func prepareForReuse() {

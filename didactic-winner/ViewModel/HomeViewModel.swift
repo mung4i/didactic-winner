@@ -14,7 +14,6 @@ class HomeViewModel {
     let disposeBag = DisposeBag()
     
     private let error: BehaviorRelay<String> = .init(value: "")
-    private let isLoading: BehaviorRelay<Bool> = .init(value: false)
     let collection: BehaviorRelay<[Item]> = .init(value: [])
     private let title: String = "The Milky Way"
     
@@ -27,16 +26,17 @@ class HomeViewModel {
         return (
             collection: self.collection.asObservable(),
             error: self.error.asObservable(),
-            isLoading: self.isLoading.asObservable(),
+            isLoading: APIClient.shared.isLoading.asObservable(),
             title: .just(self.title)
         )
     }
     
     func fetchImagesModel() {
-        isLoading.accept(true)
         APIClient.shared.getImagesData().subscribe { event in
-            self.isLoading.accept(false)
-            guard let items = event.element?.collection.items else { return }
+            guard let items = event.element?.collection.items else {
+                self.error.accept(ValidationError.missingImageData.localizedDescription)
+                return
+            }
             self.collection.accept(items)
         }.disposed(by: disposeBag)
     }
