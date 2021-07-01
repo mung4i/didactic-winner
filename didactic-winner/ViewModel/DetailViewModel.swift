@@ -17,13 +17,13 @@ class DetailViewModel {
     }
     
     func bind() -> (
-        descLabel: Driver<String>,
+        descLabel: BehaviorRelay<String>,
         subtitleLabel: Driver<String>,
         titleLabel: Driver<String>,
         urlString: BehaviorRelay<String>
     ) {
         return (
-            descLabel: .just(item.description),
+            descLabel: .init(value: item.description),
             subtitleLabel: .just(item.detail),
             titleLabel: .just(item.title),
             urlString: .init(value: item.link ?? "")

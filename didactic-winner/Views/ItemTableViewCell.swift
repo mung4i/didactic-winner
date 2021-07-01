@@ -12,16 +12,24 @@ import RxSwift
 import RxCocoa
 
 class ItemTableViewCell: UITableViewCell {
+    // MARK: - Private Instance Properties
     private let disposeBag = DisposeBag()
     
+    // MARK: - IB Outlets
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var cellDetailLabel: UILabel!
     @IBOutlet weak var cellTitleLabel: UILabel!
     
+    // MARK: - Overriden Instance Methods
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         cellImageView.image = nil
-        
     }
     
     // MARK: - IB Outlets

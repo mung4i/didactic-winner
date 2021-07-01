@@ -29,8 +29,8 @@ class HomeViewController: UIViewController {
     // MARK: - Private Instance Methods
     private func bindTableView(source: Observable<[Item]>) {
         source.bind(to: self.tableView.rx.items(
-                cellIdentifier: CustomTableViewCell.className,
-                cellType: CustomTableViewCell.self
+                cellIdentifier: ItemTableViewCell.className,
+                cellType: ItemTableViewCell.self
             )
         ) { (row, item, cell) in
             cell.populateData(item: item)
@@ -39,8 +39,8 @@ class HomeViewController: UIViewController {
     
     private func configureTableView() {
         tableView.register(
-            UINib(nibName: CustomTableViewCell.className, bundle: nil),
-            forCellReuseIdentifier: CustomTableViewCell.className
+            UINib(nibName: ItemTableViewCell.className, bundle: nil),
+            forCellReuseIdentifier: ItemTableViewCell.className
         )
         tableView
             .rx

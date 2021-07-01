@@ -16,7 +16,7 @@ class DetailsViewController: UIViewController {
     private var viewModel: DetailViewModel?
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var descLabel: UITextView!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -29,7 +29,6 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    
     func bind(viewModel: DetailViewModel) {
         self.viewModel = viewModel
     }
@@ -38,9 +37,16 @@ class DetailsViewController: UIViewController {
         let output = viewModel.bind()
         
         disposeBag.insert(
-            output.descLabel.drive(descLabel.rx.text),
             output.subtitleLabel.drive(subtitleLabel.rx.text),
             output.titleLabel.drive(titleLabel.rx.text)
+        )
+        
+        let style = NSMutableParagraphStyle()
+        style.lineHeightMultiple = 1.57
+        
+        descLabel.attributedText = NSAttributedString(
+            string: output.descLabel.value,
+            attributes: [NSAttributedString.Key.paragraphStyle : style]
         )
     }
     
@@ -49,14 +55,11 @@ class DetailsViewController: UIViewController {
         guard let url = URL(string: output.urlString.value) else { return }
         if let image = APIClient.shared.store.image(url: url) {
             let size: CGSize = .init(
-                width: CGSize.customWidth(375),
-                height: CGSize.customHeight(230)
+                width: CGSize.customWidth(imageView.bounds.width),
+                height: CGSize.customHeight(imageView.bounds.height)
             )
             imageView.image = image.resizeImg(toSize: size)
         }
     }
 }
-
-
-
 
