@@ -40,19 +40,19 @@
             </objects>
             <point key="canvasLocation" x="1031.8840579710145" y="118.52678571428571"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="gDt-ju-W6u">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="5pa-kr-aMC" customClass="DetailViewController" customModule="didactic_winner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="5pa-kr-aMC" customClass="DetailsViewController" customModule="didactic_winner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xej-ZF-IOK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LJ1-e0-6eG">
-                                <rect key="frame" x="0.0" y="44" width="414" height="313.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LJ1-e0-6eG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="233"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E6B-hI-KRP">
-                                <rect key="frame" x="16" y="357.5" width="382" height="75"/>
+                                <rect key="frame" x="16" y="277" width="382" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ume-5f-PFy">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="32.5"/>
@@ -71,11 +71,8 @@
                                     <constraint firstAttribute="height" constant="75" id="TKn-Nf-5Jy"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="if3-tY-OeB">
-                                <rect key="frame" x="16" y="437.5" width="382" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="gup-pJ-7al"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="if3-tY-OeB">
+                                <rect key="frame" x="16" y="357" width="382" height="198.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,18 +86,19 @@
                             <constraint firstItem="vih-9R-BRU" firstAttribute="trailing" secondItem="LJ1-e0-6eG" secondAttribute="trailing" id="F56-4E-58f"/>
                             <constraint firstItem="if3-tY-OeB" firstAttribute="leading" secondItem="vih-9R-BRU" secondAttribute="leading" constant="16" id="Y7p-Xo-e3y"/>
                             <constraint firstItem="LJ1-e0-6eG" firstAttribute="top" secondItem="vih-9R-BRU" secondAttribute="top" id="j8I-7g-4aj"/>
-                            <constraint firstItem="LJ1-e0-6eG" firstAttribute="height" secondItem="Xej-ZF-IOK" secondAttribute="height" multiplier="0.35" id="jAz-pm-caX"/>
+                            <constraint firstItem="LJ1-e0-6eG" firstAttribute="height" secondItem="Xej-ZF-IOK" secondAttribute="height" multiplier="0.26" id="jAz-pm-caX"/>
                             <constraint firstItem="E6B-hI-KRP" firstAttribute="top" secondItem="LJ1-e0-6eG" secondAttribute="bottom" id="kZ4-5A-dJU"/>
                             <constraint firstItem="LJ1-e0-6eG" firstAttribute="leading" secondItem="vih-9R-BRU" secondAttribute="leading" id="ntn-Yu-9Lt"/>
+                            <constraint firstItem="if3-tY-OeB" firstAttribute="height" secondItem="Xej-ZF-IOK" secondAttribute="height" multiplier="180/812" id="t7h-ez-iBP"/>
                             <constraint firstItem="vih-9R-BRU" firstAttribute="trailing" secondItem="if3-tY-OeB" secondAttribute="trailing" constant="16" id="uHz-Yc-KTv"/>
                             <constraint firstItem="if3-tY-OeB" firstAttribute="top" secondItem="E6B-hI-KRP" secondAttribute="bottom" constant="5" id="wO0-7Z-bhL"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="descLabel" destination="if3-tY-OeB" id="oxJ-5o-Jcb"/>
-                        <outlet property="imageView" destination="LJ1-e0-6eG" id="FhX-0p-gk3"/>
-                        <outlet property="subtitleLabel" destination="IgR-lX-gnu" id="H4v-xJ-wuN"/>
-                        <outlet property="titleLabel" destination="Ume-5f-PFy" id="rgh-ck-Ph7"/>
+                        <outlet property="descLabel" destination="if3-tY-OeB" id="bBt-WB-NIN"/>
+                        <outlet property="imageView" destination="LJ1-e0-6eG" id="urR-If-evd"/>
+                        <outlet property="subtitleLabel" destination="IgR-lX-gnu" id="CHZ-kr-nF2"/>
+                        <outlet property="titleLabel" destination="Ume-5f-PFy" id="b8U-cF-4RY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7PS-pK-3LU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -13,7 +13,7 @@ import RxCocoa
 class HomeViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
-    private var viewModel: BaseViewModel = .init()
+    private var viewModel: HomeViewModel = .init()
     
     // MARK: - IB Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -62,7 +62,7 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         
-        let dvc = storyboard.instantiateViewController(withIdentifier: DetailViewController.className) as! DetailViewController
+        let dvc = storyboard.instantiateViewController(withIdentifier: DetailsViewController.className) as! DetailsViewController
         dvc.bind(viewModel: DetailViewModel(item: viewModel.collection.value[indexPath.row]))
         
         navigationController?.pushViewController(dvc, animated: true)
