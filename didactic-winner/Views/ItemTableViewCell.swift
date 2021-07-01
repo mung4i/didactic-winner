@@ -1,5 +1,5 @@
 //
-//  CustomTableViewCell.swift
+//  ItemTableViewCell.swift
 //  didactic-winner
 //
 //  Created by Martin Mungai on 30/06/2021.
@@ -11,7 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class CustomTableViewCell: UITableViewCell {
+class ItemTableViewCell: UITableViewCell {
     private let disposeBag = DisposeBag()
     
     @IBOutlet weak var cellImageView: UIImageView!
