@@ -13,7 +13,7 @@ import RxCocoa
 class HomeViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
-    private var viewModel: BaseViewModel = .init()
+    private var viewModel: HomeViewModel = .init()
     
     // MARK: - IB Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -29,8 +29,8 @@ class HomeViewController: UIViewController {
     // MARK: - Private Instance Methods
     private func bindTableView(source: Observable<[Item]>) {
         source.bind(to: self.tableView.rx.items(
-                cellIdentifier: CustomTableViewCell.className,
-                cellType: CustomTableViewCell.self
+                cellIdentifier: ItemTableViewCell.className,
+                cellType: ItemTableViewCell.self
             )
         ) { (row, item, cell) in
             cell.populateData(item: item)
@@ -39,8 +39,8 @@ class HomeViewController: UIViewController {
     
     private func configureTableView() {
         tableView.register(
-            UINib(nibName: CustomTableViewCell.className, bundle: nil),
-            forCellReuseIdentifier: CustomTableViewCell.className
+            UINib(nibName: ItemTableViewCell.className, bundle: nil),
+            forCellReuseIdentifier: ItemTableViewCell.className
         )
         tableView
             .rx
@@ -59,6 +59,14 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        
+        let dvc = storyboard.instantiateViewController(withIdentifier: DetailsViewController.className) as! DetailsViewController
+        dvc.bind(viewModel: DetailViewModel(item: viewModel.collection.value[indexPath.row]))
+        
+        navigationController?.pushViewController(dvc, animated: true)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }

@@ -32,6 +32,23 @@ struct Item: Codable {
     let data: [Datum]
 }
 
+extension Item {
+    var detail: String {
+        guard let data = data.first else { return "nil" }
+        return data.photographer == nil ?
+            "" : "\(data.photographer ?? "") | \(data.dateCreated.formattedDate)"
+    }
+    var description: String {
+        data.first?.datumDescription ?? ""
+    }
+    var title: String {
+        data.first?.title ?? ""
+    }
+    var link: String? {
+        links.first?.href
+    }
+}
+
 // MARK: - Datum
 struct Datum: Codable {
     let keywords: [String]?

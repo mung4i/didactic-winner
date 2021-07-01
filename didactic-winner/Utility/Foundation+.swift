@@ -25,6 +25,12 @@ extension Date {
     }
 }
 
+extension String {
+    var formattedDate: String {
+        return Date.formatDate(str: self)
+    }
+}
+
 public protocol ClassName {
     static var className: String { get }
     var className: String { get }

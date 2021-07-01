@@ -7,6 +7,24 @@
 
 import UIKit
 
+extension CGSize {
+    public static func customHeight(_ defaultSize: CGFloat) -> CGFloat {
+        let bounds = UIScreen.main.bounds
+        let height = bounds.size.height
+        
+        let baseWidth: CGFloat = 812
+        return defaultSize * (height / baseWidth)
+    }
+    
+    public static func customWidth(_ defaultSize: CGFloat) -> CGFloat {
+        let bounds = UIScreen.main.bounds
+        let width = bounds.size.width
+        
+        let baseWidth: CGFloat = 375
+        return defaultSize * (width / baseWidth)
+    }
+}
+
 extension UIColor {
     static func color(hex:String) -> UIColor {
         var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
