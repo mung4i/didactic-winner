@@ -11,7 +11,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class APIClient {
+protocol APIContract {
+    func getImagesData() -> Observable<ImagesResponse>
+    func fetchImage(url: URL) -> Observable<ImageResponse>
+}
+
+final class APIClient: APIContract {
     
     static var shared = APIClient()
     lazy var requestObservable = RequestObservable(config: .default)

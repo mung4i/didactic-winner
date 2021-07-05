@@ -27,30 +27,7 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - Private Instance Methods
-    private func bindTableView(source: Observable<[Item]>) {
-        source.bind(to: self.tableView.rx.items(
-                cellIdentifier: ItemTableViewCell.className,
-                cellType: ItemTableViewCell.self
-            )
-        ) { (row, item, cell) in
-            cell.populateData(item: item)
-        }.disposed(by: disposeBag)
-    }
-    
-    private func configureTableView() {
-        tableView.register(
-            UINib(nibName: ItemTableViewCell.className, bundle: nil),
-            forCellReuseIdentifier: ItemTableViewCell.className
-        )
-        tableView
-            .rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
-        tableView.separatorStyle = .none
-    }
-    
-    // MARK: - Instance Methods
-    func bind() {
+    private func bind() {
         let output = self.viewModel.bind()
         
         bindTableView(source: output.collection)
@@ -73,6 +50,28 @@ class HomeViewController: UIViewController {
                 self.removeBlurView()
             }
         }).disposed(by: disposeBag)
+    }
+    
+    private func bindTableView(source: Observable<[Item]>) {
+        source.bind(to: self.tableView.rx.items(
+                cellIdentifier: ItemTableViewCell.className,
+                cellType: ItemTableViewCell.self
+            )
+        ) { (row, item, cell) in
+            cell.populateData(item: item)
+        }.disposed(by: disposeBag)
+    }
+    
+    private func configureTableView() {
+        tableView.register(
+            UINib(nibName: ItemTableViewCell.className, bundle: nil),
+            forCellReuseIdentifier: ItemTableViewCell.className
+        )
+        tableView
+            .rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+        tableView.separatorStyle = .none
     }
 }
 
