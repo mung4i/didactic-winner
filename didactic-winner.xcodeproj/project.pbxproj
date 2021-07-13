@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1787FE6FCCB51BC2376C04B7 /* Pods_didactic_winner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13D3B1228F44F6C9DBA4DE7 /* Pods_didactic_winner.framework */; };
 		5B030D64268C63F500C42B9E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B030D63268C63F500C42B9E /* HomeViewModel.swift */; };
-		5B030D73268C6E2B00C42B9E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B030D72268C6E2B00C42B9E /* RxSwift */; };
-		5B030D77268C6E2B00C42B9E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 5B030D76268C6E2B00C42B9E /* RxRelay */; };
-		5B030D79268C6E2B00C42B9E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5B030D78268C6E2B00C42B9E /* RxCocoa */; };
 		5B2B4148269334BE00C567C3 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B4147269334BE00C567C3 /* DetailViewModelTests.swift */; };
 		5B2B414C269336ED00C567C3 /* DetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B414B269336ED00C567C3 /* DetailsViewControllerTests.swift */; };
 		5B2B41532693372C00C567C3 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B41522693372C00C567C3 /* HomeViewControllerTests.swift */; };
@@ -31,14 +29,13 @@
 		5BC76CC3268C79E200DEC930 /* RequestObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76CC2268C79E200DEC930 /* RequestObservable.swift */; };
 		5BC76CC8268C7CAC00DEC930 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76CC7268C7CAC00DEC930 /* APIClient.swift */; };
 		5BC76CD3268C9FF700DEC930 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC76CD2268C9FF700DEC930 /* ImageCache.swift */; };
-		5BF028FA268DE2C200B47505 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF028F9268DE2C200B47505 /* RxBlocking */; };
-		5BF028FC268DE2C600B47505 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF028FB268DE2C600B47505 /* RxTest */; };
 		5BF21FC5268C456A0095B3C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF21FC4268C456A0095B3C1 /* AppDelegate.swift */; };
 		5BF21FC9268C456A0095B3C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF21FC8268C456A0095B3C1 /* HomeViewController.swift */; };
 		5BF21FCC268C456A0095B3C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF21FCA268C456A0095B3C1 /* Main.storyboard */; };
 		5BF21FCE268C456B0095B3C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF21FCD268C456B0095B3C1 /* Assets.xcassets */; };
 		5BF21FD1268C456B0095B3C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF21FCF268C456B0095B3C1 /* LaunchScreen.storyboard */; };
 		5BFDEF8F268DC0B400AE87A5 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDEF8E268DC0B400AE87A5 /* DetailViewModel.swift */; };
+		A582EA37BBA4758AA45A9BA3 /* Pods_didactic_winnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4718794710C0363F2CAAB13 /* Pods_didactic_winnerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		331E2B4508AAE23A102B0A47 /* Pods-didactic-winner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-didactic-winner.debug.xcconfig"; path = "Target Support Files/Pods-didactic-winner/Pods-didactic-winner.debug.xcconfig"; sourceTree = "<group>"; };
 		5B030D63268C63F500C42B9E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5B2B4147269334BE00C567C3 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
 		5B2B414B269336ED00C567C3 /* DetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerTests.swift; sourceTree = "<group>"; };
@@ -83,6 +81,11 @@
 		5BF21FD7268C456C0095B3C1 /* didactic-winnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "didactic-winnerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF21FDD268C456C0095B3C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BFDEF8E268DC0B400AE87A5 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		A2B4FFCCD3425B8F4E7FAAA7 /* Pods-didactic-winner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-didactic-winner.release.xcconfig"; path = "Target Support Files/Pods-didactic-winner/Pods-didactic-winner.release.xcconfig"; sourceTree = "<group>"; };
+		A4718794710C0363F2CAAB13 /* Pods_didactic_winnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_didactic_winnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C13D3B1228F44F6C9DBA4DE7 /* Pods_didactic_winner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_didactic_winner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C43CB5980FAC94EF1406A290 /* Pods-didactic-winnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-didactic-winnerTests.debug.xcconfig"; path = "Target Support Files/Pods-didactic-winnerTests/Pods-didactic-winnerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E33A49EB076806CFA61AC4E1 /* Pods-didactic-winnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-didactic-winnerTests.release.xcconfig"; path = "Target Support Files/Pods-didactic-winnerTests/Pods-didactic-winnerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BF028FC268DE2C600B47505 /* RxTest in Frameworks */,
-				5B030D77268C6E2B00C42B9E /* RxRelay in Frameworks */,
-				5BF028FA268DE2C200B47505 /* RxBlocking in Frameworks */,
-				5B030D79268C6E2B00C42B9E /* RxCocoa in Frameworks */,
-				5B030D73268C6E2B00C42B9E /* RxSwift in Frameworks */,
+				1787FE6FCCB51BC2376C04B7 /* Pods_didactic_winner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,15 +101,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A582EA37BBA4758AA45A9BA3 /* Pods_didactic_winnerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CB4CAF8C760C858A3779580 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				331E2B4508AAE23A102B0A47 /* Pods-didactic-winner.debug.xcconfig */,
+				A2B4FFCCD3425B8F4E7FAAA7 /* Pods-didactic-winner.release.xcconfig */,
+				C43CB5980FAC94EF1406A290 /* Pods-didactic-winnerTests.debug.xcconfig */,
+				E33A49EB076806CFA61AC4E1 /* Pods-didactic-winnerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5B030D68268C65DD00C42B9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C13D3B1228F44F6C9DBA4DE7 /* Pods_didactic_winner.framework */,
+				A4718794710C0363F2CAAB13 /* Pods_didactic_winnerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,6 +240,7 @@
 				5BF21FDA268C456C0095B3C1 /* didactic-winnerTests */,
 				5BF21FC2268C456A0095B3C1 /* Products */,
 				5B030D68268C65DD00C42B9E /* Frameworks */,
+				3CB4CAF8C760C858A3779580 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,22 +287,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BF21FEB268C456C0095B3C1 /* Build configuration list for PBXNativeTarget "didactic-winner" */;
 			buildPhases = (
+				2141AA04638908847C8C34B2 /* [CP] Check Pods Manifest.lock */,
 				5BF21FBD268C456A0095B3C1 /* Sources */,
 				5BF21FBE268C456A0095B3C1 /* Frameworks */,
 				5BF21FBF268C456A0095B3C1 /* Resources */,
+				59B3EB86B1E0263F9FD89D74 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "didactic-winner";
-			packageProductDependencies = (
-				5B030D72268C6E2B00C42B9E /* RxSwift */,
-				5B030D76268C6E2B00C42B9E /* RxRelay */,
-				5B030D78268C6E2B00C42B9E /* RxCocoa */,
-				5BF028F9268DE2C200B47505 /* RxBlocking */,
-				5BF028FB268DE2C600B47505 /* RxTest */,
-			);
 			productName = "didactic-winner";
 			productReference = 5BF21FC1268C456A0095B3C1 /* didactic-winner.app */;
 			productType = "com.apple.product-type.application";
@@ -296,6 +306,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BF21FEE268C456C0095B3C1 /* Build configuration list for PBXNativeTarget "didactic-winnerTests" */;
 			buildPhases = (
+				99BB8808D9BD20514E22F872 /* [CP] Check Pods Manifest.lock */,
 				5BF21FD3268C456C0095B3C1 /* Sources */,
 				5BF21FD4268C456C0095B3C1 /* Frameworks */,
 				5BF21FD5268C456C0095B3C1 /* Resources */,
@@ -306,8 +317,6 @@
 				5BF21FD9268C456C0095B3C1 /* PBXTargetDependency */,
 			);
 			name = "didactic-winnerTests";
-			packageProductDependencies = (
-			);
 			productName = "didactic-winnerTests";
 			productReference = 5BF21FD7268C456C0095B3C1 /* didactic-winnerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -339,9 +348,6 @@
 				Base,
 			);
 			mainGroup = 5BF21FB8268C456A0095B3C1;
-			packageReferences = (
-				5B030D71268C6E2B00C42B9E /* XCRemoteSwiftPackageReference "RxSwift" */,
-			);
 			productRefGroup = 5BF21FC2268C456A0095B3C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -373,6 +379,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2141AA04638908847C8C34B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-didactic-winner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59B3EB86B1E0263F9FD89D74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-didactic-winner/Pods-didactic-winner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-didactic-winner/Pods-didactic-winner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-didactic-winner/Pods-didactic-winner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99BB8808D9BD20514E22F872 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-didactic-winnerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BF21FBD268C456A0095B3C1 /* Sources */ = {
@@ -559,6 +629,7 @@
 		};
 		5BF21FEC268C456C0095B3C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 331E2B4508AAE23A102B0A47 /* Pods-didactic-winner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -580,6 +651,7 @@
 		};
 		5BF21FED268C456C0095B3C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2B4FFCCD3425B8F4E7FAAA7 /* Pods-didactic-winner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -601,6 +673,7 @@
 		};
 		5BF21FEF268C456C0095B3C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C43CB5980FAC94EF1406A290 /* Pods-didactic-winnerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -624,6 +697,7 @@
 		};
 		5BF21FF0268C456C0095B3C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E33A49EB076806CFA61AC4E1 /* Pods-didactic-winnerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -676,45 +750,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5B030D71268C6E2B00C42B9E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5B030D72268C6E2B00C42B9E /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B030D71268C6E2B00C42B9E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		5B030D76268C6E2B00C42B9E /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B030D71268C6E2B00C42B9E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		5B030D78268C6E2B00C42B9E /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B030D71268C6E2B00C42B9E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		5BF028F9268DE2C200B47505 /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B030D71268C6E2B00C42B9E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		5BF028FB268DE2C600B47505 /* RxTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B030D71268C6E2B00C42B9E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxTest;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5BF21FB9268C456A0095B3C1 /* Project object */;
 }
