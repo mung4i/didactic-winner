@@ -4,7 +4,7 @@ Didact-Winner is an iOS application which fetches details from NASA Images API.
 
 ## Configuration
 
-There is only one 3rd party stack on the project and it uses SPM to fetch it so configuration is out of the box with XCode. 
+There is only one 3rd party stack on the project and it uses cocoapods to fetch. Feel free to run `pod install` on the root of the project.
 
 
 ## Testing
