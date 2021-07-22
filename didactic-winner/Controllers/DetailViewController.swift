@@ -60,7 +60,7 @@ class DetailsViewController: UIViewController {
         )
         
         if let image = APIClient.shared.store.image(url: url) {
-            imageView.image = image.resizeImg(toSize: size)
+            imageView.image = image
         } else {
             bindImageView(url: url)
         }
@@ -80,7 +80,7 @@ class DetailsViewController: UIViewController {
             guard let image = event.element?.image else { return }
             DispatchQueue.main.async {
                 APIClient.shared.store.saveImage(image: image, url: url)
-                self.imageView.image = image.resizeImg()
+                self.imageView.image = image
                 self.view.setNeedsLayout()
             }
         }.disposed(by: disposeBag)
