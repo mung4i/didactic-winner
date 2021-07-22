@@ -57,7 +57,7 @@ class ItemTableViewCell: UITableViewCell {
             guard let image = event.element?.image else { return }
             DispatchQueue.main.async {
                 APIClient.shared.store.saveImage(image: image, url: url)
-                self.cellImageView.image = image.resizeImg()
+                self.cellImageView.image = image
                 self.setNeedsLayout()
             }
         }.disposed(by: disposeBag)
@@ -66,7 +66,7 @@ class ItemTableViewCell: UITableViewCell {
     private func setImage(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         if let image = APIClient.shared.store.image(url: url) {
-            cellImageView.image = image.resizeImg()
+            cellImageView.image = image
         } else {
             self.bindImageView(url: url)
         }

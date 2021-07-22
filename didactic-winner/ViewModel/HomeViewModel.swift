@@ -34,7 +34,6 @@ class HomeViewModel {
     func fetchImagesModel() {
         APIClient.shared.getImagesData().subscribe { event in
             guard let items = event.element?.collection.items else {
-                self.error.accept(ValidationError.missingImageData.localizedDescription)
                 return
             }
             self.collection.accept(items)
